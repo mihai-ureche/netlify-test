@@ -1,10 +1,15 @@
 _schema: _schema
-source: /
+# Use the `src` directory as the site source so CloudCannon will deploy
+# the `src/index.njk` file as the site's index.
+source: src
 paths:
   uploads: uploads
-  static: ''
+  static: ""
 timezone: Europe/Bucharest
 markdown:
   engine: commonmark
   options:
     html: true
+# Note: CloudCannon typically serves files from the configured `source`.
+# If your build pipeline generates files elsewhere, adjust `source` or
+# add a build step in your CI to copy the generated output into `src`.
