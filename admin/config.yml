@@ -1,0 +1,35 @@
+# Netlify CMS configuration
+backend:
+  name: git-gateway
+  branch: main # optional, defaults to the repository's default branch
+
+# Alternative GitHub backend example (commented):
+# backend:
+#   name: github
+#   repo: <your-github-username>/<your-repo>
+#   branch: main
+#   auth_type: implicit
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "homepage"
+    label: "Homepage"
+    label_singular: "Homepage"
+    folder: "src"
+    files:
+      - file: "src/index.njk"
+        label: "Index (Home)"
+        name: "index"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+# Notes:
+# - Using a `files` collection allows editing a single file (here `src/index.njk`).
+# - `media_folder` and `public_folder` assume you serve uploads from `static/uploads`.
+# - For the `git-gateway` backend to work, enable Netlify Identity and Git Gateway in your
+#   Netlify site dashboard (see instructions in the README section below).
