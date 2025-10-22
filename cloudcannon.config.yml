@@ -1,7 +1,8 @@
-collections_config: {}
+_schema: _schema
+source: /
 paths:
-  static: ''
   uploads: uploads
+  static: ''
 timezone: Europe/Bucharest
 markdown:
   engine: commonmark
