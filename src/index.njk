@@ -1,0 +1,43 @@
+---
+title: Welcome
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ title | default('My Nunjucks Site') }}</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; padding: 2rem; }
+      header { margin-bottom: 1.5rem }
+      .muted { color: #666; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>{{ title | default('Welcome') }}</h1>
+      <p class="muted">A minimal Nunjucks starting page.</p>
+    </header>
+
+    <main>
+      <p>This is the simplest starting template using Nunjucks.</p>
+
+      {# Example: iterate a small list if provided #}
+      {% if items %}
+        <h2>Items</h2>
+        <ul>
+          {% for it in items %}
+            <li>{{ it }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="muted">No items to show — pass an <code>items</code> array to render a list.</p>
+      {% endif %}
+    </main>
+
+    <footer style="margin-top:2rem; font-size:0.9rem; color:#999;">
+      <p>Generated with a minimal Nunjucks template.</p>
+    </footer>
+  </body>
+</html>
