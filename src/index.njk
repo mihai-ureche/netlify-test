@@ -17,6 +17,7 @@ items:
       body { font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; padding: 2rem; }
       header { margin-bottom: 1.5rem }
       .muted { color: #666; }
+      .margin-left {left: 200px}
     </style>
   </head>
   <body>
@@ -26,7 +27,7 @@ items:
     </header>
 
     <main>
-      <p>This is the simplest starting template using Nunjucks.</p>
+      <p class="margin-left">This is the simplest starting template using Nunjucks.</p>
 
       {# Example: iterate a small list if provided #}
       {% if items %}
